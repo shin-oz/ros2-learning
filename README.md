@@ -1,16 +1,31 @@
-## objective
-- Learn ROS2 fundamentals through hands-on tutorials
-- Build a reproducible ROS2 development environment using Docker
-- Document networking and QoS behavior for future reference
+# ROS2 Learning Environment
 
-## What I need to learne
+## Objective
+To learn ROS2 fundamentals and autonomous driving software architecture through hands-on development using reproducible Linux/Docker environments.
 
-- ROS2 node communication model
-- Topic / Service / Action differences
-- Basic QoS configuration behavior
-- Docker-based ROS2 workflow
-- ROS2 networking behavior between containers
+## Environment
+- Windows 11 + WSL2 (Ubuntu)
+- Docker / Docker Compose
+- ROS2 Humble
 
+## Learning Focus
+- ROS2 communication architecture
+- QoS behavior and DDS-based networking
+- Docker-based ROS2 development workflow
+- Inter-container communication and debugging
+- Foundations for Autoware and autonomous driving software integration
+
+## Current Progress('26/6/14)
+- ROS2 publisher/subscriber tutorial
+- Service / Action tutorial
+- Launch system basics
+- GitHub-based environment management
+
+## Future Plans
+- Study Autoware architecture
+- Implement custom ROS2 nodes
+- Learn Linux and middleware concepts
+- Explore autonomous driving software integration workflows
 
 ## directory structure
 ```
