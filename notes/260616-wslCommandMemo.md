@@ -85,3 +85,10 @@ Cとは？最小設定の、英語前提のlocaleのこと
 - posix
 Portable Operating System Interface
 unix系OSの共通ルール
+
+- ros2 middleware
+talker nodeとlistener nodeは直接通信していない
+RMW(ros middleware)を使ってDDS(data distribution service)通信をする
+大量のlidarデータなどを使うときはRMWをjazzy標準のFast DDSでなくCyclone DDSとかにしたほうが通信が早いことがあるらしい
+
+https://docs.ros.org/en/jazzy/Tutorials.html
