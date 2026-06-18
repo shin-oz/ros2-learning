@@ -92,3 +92,10 @@ RMW(ros middleware)を使ってDDS(data distribution service)通信をする
 大量のlidarデータなどを使うときはRMWをjazzy標準のFast DDSでなくCyclone DDSとかにしたほうが通信が早いことがあるらしい
 
 https://docs.ros.org/en/jazzy/Tutorials.html
+
+- middleware
+OSとapplicationの間に入って、共通機能を提供するソフトウェア
+
+- mkdir -p
+親ディレクトリも一緒に作成
+
