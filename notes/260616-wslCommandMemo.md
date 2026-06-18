@@ -53,3 +53,35 @@ docker内部でコンテナを動かす低レイヤruntime?
 
 - docker-compose-plugin
 compose: コンテナをまとめて管理する仕組み
+
+- nvidia-smi
+nvidia系コマンド
+
+- dpkg --print-architecture
+cpuアーキテクチャを確認
+
+amd64 = x86_64
+amdが最初に64bit拡張版を作成したためintelでもamd64と表示される
+
+uname -aはx86_64と応答がある
+
+arm64とは？
+arm系アーキテクチャ
+macやスマホなどこっち
+消費電力が小さかったりする
+
+- jenkinsとは？
+CI/CDツール
+最近はgithub automateもあるが
+ビルド・テスト・デプロイを自動化するツール
+
+- instanceとは？
+実際に起動している実体
+
+- localeとは？
+表示言語や文字コードや日付の表示形式など、linuxの言語・地域設定のこと
+Cとは？最小設定の、英語前提のlocaleのこと
+
+- posix
+Portable Operating System Interface
+unix系OSの共通ルール
