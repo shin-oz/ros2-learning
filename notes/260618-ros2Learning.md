@@ -38,7 +38,7 @@ ROSで送受信されるMessageを保存するファイル形式
 ROS2ではcolonを使う
 
 ament：各パッケージをどうビルドするか定義する仕組み
-colon：複数のpackageをまとめてbuildするツール
+coclon：複数のpackageをまとめてbuildするツール
 
 ## ワークスペース作成 → パッケージ作成 → ノード作成 → ビルド → 実行
 1. ワークスペース作成
@@ -63,7 +63,7 @@ my_learning_ros2
 ```
 
 3. node作成
-cd ~/ros2_ws/src/my_learning_ros2/src
+cd ~/ros2_ws/src/my_learning_ros2
 touch hello_node.py
 
 ```
@@ -105,7 +105,8 @@ entry_points={
 
 5. build
 cd ~/ros_ws
-colon build
+# ~/ros2_ws/でbuildしないと構成がおかしくなり動かなかった
+colcon build
 
 下記ディレクトリができる
 ```
@@ -123,3 +124,38 @@ source install/setup.bash
 ros2 run my_learning_ros2 hello_node
 
 
+=260619このフォルダ構成でできた==
+```
+ros_ws/
+└── src/
+    └── my_learning_ros2/
+        ├── my_learning_ros2/
+        │   ├── __init__.py
+        │   └── hello_node.py
+        ├── resource/
+        │   └── my_learning_ros2    ← このファイルが必要（中身は空でOK）
+        ├── package.xml
+        └── setup.py
+```
+これでros_wsで`colcon build`した
+そのあと
+source install/setup.bash
+ros2 run my_learning_ros2 hello_node
+
+# エディタのtabは2だが、コード生成でtab4になっていた。。
+
+shinnosuke@5oz:~/projects/ros2-learning/ros_ws$ rm -rf build install log
+　
+
+
+colcon build --event-handlers console_direct+ これはなんだ？
+
+
+shinnosuke@5oz:~/projects/ros2-learning/ros_ws/src/my_learning_ros2$ cat setup.cfg 
+[develop]
+script_dir=$base/lib/my_learning_ros2
+[install]
+install_scripts=$base/lib/my_learning_ros2
+shinnosuke@5oz:~/projects/ros2-learning/ros_w
+
+これしたらできたのはなぜだ？
