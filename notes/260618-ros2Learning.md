@@ -1,13 +1,9 @@
-## memo
+# memo
 
 ros2とは
 →OSとアプリ(Autowareなど)の間のミドルウェア
 
-- node
-単純なlinuxプログラムの個々
-センサから数値を読み取る、モータの回転数を制御する　など
-Lidarを用いた自己位置推定では、センサドライバ→センサデータ処理→自己位置推定　の３つのノードが動作する
-
+## 用語リスト
 - package
 アプリケーションの構成単位
 複数のnodeによりpackage(アプリケーション)が構成される
@@ -20,8 +16,22 @@ rescore子安堵によってROS masterを起動する
 node間でやりとりされる情報
 一方向のTopicと双方向のServiceがある
 
-- Topic
+- node
+単純なlinuxプログラムの個々
+センサから数値を読み取る、モータの回転数を制御する　など
+Lidarを用いた自己位置推定では、センサドライバ→センサデータ処理→自己位置推定　の３つのノードが動作する
+
+- Topic通信
 Node間でMessageをやりとりするための名前付きパス
+Publish/Subscribeモデルで、1対N通信の非同期通信
+カメラからの画像生データをTopicとして配信: Publish
+車検知のノードでTopicを購読: Subscirbe
+歩行者検知のノードでTopicを購読: Subscirbe
+メリット：データ型を合わせるだけでNode追加が可能
+
+- Service通信
+serviceをrequestするclientとresponseを返すserver間で交わされる1対1通信の同期通信
+同期通信なので処理が行われたことをclient側で判別するため処理時間が多く、Autowareではあまり使われないらしい
 
 - rosrun
 ROSにおける実行コマンド
@@ -30,42 +40,86 @@ ROSにおける実行コマンド
 - roslaunch
 複数nodeを実行するコマンド
 
+- rviz2
+ROS2の3次元可視化ツールのこと
+
+- rqt
+node,topic,messageを扱うGUIツール
+階層やグラフ表示することでnodeの新規作成などできる
+
 - bag
 ROSで送受信されるMessageを保存するファイル形式
 
-## build system
-コンパイルやライブラリのリンクなどをまとめて実行する
-ROS2ではcolonを使う
+- rosbag
+ROS上で動作中のtopicのやり取りデータを保存したbag形式データ
+センサデータを記録する際になかった機能を実装できたあと、センサなしで動作確認することができる
+`ros2 bag`コマンドを使う？
+`ros2 bag record -a`データの保存
+`ros2 bag play ###`データの再生
 
-ament：各パッケージをどうビルドするか定義する仕組み
-coclon：複数のpackageをまとめてbuildするツール
+## build
+- build system: ament ->何をどうbuildするかのルールを定義
+- build tool: colcon ->buildを実際に実行するツール
 
-## ワークスペース作成 → パッケージ作成 → ノード作成 → ビルド → 実行
+### buildの目的
+1. パッケージの登録 src directoryにpackageを作り、 ros2 runでpackageを実行した際にsrc directoryを見に行くようになる
+2. 依存関係の解決 package.xmlに書いた依存ライブラリを紐づける
+3. コンパイル ※C++の場合
+4. 環境の統一　install directoryに全packageを集約し、sourceで一括有効化（環境変数を追加する）できるようにする
+   1. ros2 runするときは環境変数AMENT_PREFIX_PATHに登録された場所を順番に検索
+   2. package.xmlを発見する
+
+## topic communication
+under construction
+
+## ros2実行の流れ
+### 基本フロー
+```
+# 1. packageのひな形を作成する
+ros2 pkg create --build-type ament_python my_package
+
+# 2. コードを編集（src/my_package/my_package）
+
+# 2. build
+cd ~/ros2_ws
+colcon build --packages-select my_package
+
+# 3. 環境を反映
+source install/setup.bash
+
+# 4. 実行
+ros2 run my_package my_node
+```
+
+### 実際の手順
 1. ワークスペース作成
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws
 tree -L 2 # ディレクトリ構成を深さ2階層まで表示する
 
-2. amentを使ってpackageを作成する
+2. amentを使ってpackageのtemplateを作成する
 cd ~/ros2_ws/src
-'# package名はlearning_ros2、ament_pythonのビルドシステムを使う
-ros2 pkg create --build-type ament_python my_learning_ros2
+'# package名はmy_package、ament_pythonのビルドシステムを使う
+ros2 pkg create --build-type ament_python my_package
 
 ```
-my_learning_ros2
+src/my_package
 ├── package.xml # packageの依存関係
 ├── setup.py # build時に利用する設定ファイル
-├── setup.cfg # python packageをどうインすｔ－るするか定義
+├── setup.cfg # python packageをどうインストールするか定義
 ├── resource
-│   └── my_learning_ros2
-└── my_learning_ros2
-    └── __init__.py
+│   └── my_package # buildするとこのファイルがinstall/に登録される。nodeはここで作成
+└── my_package
+    └── __init__.py # 他ファイルからimportできるようにpythonモジュールであることを宣言
 ```
 
 3. node作成
-cd ~/ros2_ws/src/my_learning_ros2
+```
+cd ~/ros2_ws/src/XXX/XXX
 touch hello_node.py
+```
 
+coding内容
 ```
 import rclpy
 from rclpy.node import Node
@@ -93,38 +147,43 @@ if __name__ == '__main__':
     main()
 ```
 
-4. setup.py登録
+4. setup.py追記
 hello_node->my_learning_ros2->hello_node.py->main()の対応関係を指定　
 ```
 entry_points={
     'console_scripts': [
+        <!-- 実行名 = モジュール名.ファイル名:関数 -->
         'hello_node = my_learning_ros2.hello_node:main',
     ],
 },
 ```
 
 5. build
+```
 cd ~/ros_ws
-# ~/ros2_ws/でbuildしないと構成がおかしくなり動かなかった
+# src/を探しにいくため、~/ros2_ws/でbuildすること
 colcon build
+```
 
 下記ディレクトリができる
 ```
 ros2_ws
-├── build/
-├── install/
-├── log/
-└── src/
+├── build/　中間ファイル（触らなくてよい）
+├── install/　実行に使われるファイル群
+├── log/　buildのログ
+└── src/ 自分で作ったコード
 ````
 
 6. 実行
-# 現在のシェルに設定ファイルを読み込む　
+```
+# 現在のシェルでros2 runするpackageがどこにあるか指定する
 source install/setup.bash
 # my_learning_ros2 packageのsetup.pyにあるhello_nodeの実行ファイルを実行する
 ros2 run my_learning_ros2 hello_node
+```
 
 
-=260619このフォルダ構成でできた==
+## 260619このフォルダ構成でできた
 ```
 ros_ws/
 └── src/
@@ -142,14 +201,11 @@ ros_ws/
 source install/setup.bash
 ros2 run my_learning_ros2 hello_node
 
-# エディタのtabは2だが、コード生成でtab4になっていた。。
+-> エディタのtabは2だが、コード生成でtab4になっていた。。
 
 shinnosuke@5oz:~/projects/ros2-learning/ros_ws$ rm -rf build install log
-　
-
 
 colcon build --event-handlers console_direct+ これはなんだ？
-
 
 shinnosuke@5oz:~/projects/ros2-learning/ros_ws/src/my_learning_ros2$ cat setup.cfg 
 [develop]
