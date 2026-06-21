@@ -26,6 +26,7 @@ setup(
     #     'console_scripts': [
     #     ],
     # },
+    # ros2 runしたときのために実行ファイルを紐づける
     entry_points={
     'console_scripts': [
         # <!-- 実行名 = モジュール名.ファイル名:関数 -->
