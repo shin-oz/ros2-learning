@@ -1,0 +1,24 @@
+[2.119s] Invoking command in '/home/shinnosuke/projects/ros2-learning/ros_ws/src/1hz_hello': PYTHONPATH=/home/shinnosuke/projects/ros2-learning/ros_ws/build/1hz_hello/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shinnosuke/projects/ros2-learning/ros_ws/install/1hz_hello/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/1hz_hello build --build-base /home/shinnosuke/projects/ros2-learning/ros_ws/build/1hz_hello/build install --record /home/shinnosuke/projects/ros2-learning/ros_ws/build/1hz_hello/install.log --single-version-externally-managed install_data
+[2.591s] running egg_info
+[2.621s] writing ../../build/1hz_hello/1hz_hello.egg-info/PKG-INFO
+[2.621s] writing dependency_links to ../../build/1hz_hello/1hz_hello.egg-info/dependency_links.txt
+[2.622s] writing entry points to ../../build/1hz_hello/1hz_hello.egg-info/entry_points.txt
+[2.622s] writing requirements to ../../build/1hz_hello/1hz_hello.egg-info/requires.txt
+[2.622s] writing top-level names to ../../build/1hz_hello/1hz_hello.egg-info/top_level.txt
+[2.696s] reading manifest file '../../build/1hz_hello/1hz_hello.egg-info/SOURCES.txt'
+[2.697s] writing manifest file '../../build/1hz_hello/1hz_hello.egg-info/SOURCES.txt'
+[2.698s] running build
+[2.699s] running build_py
+[2.699s] copying 1hz_hello/hello.py -> /home/shinnosuke/projects/ros2-learning/ros_ws/build/1hz_hello/build/lib/1hz_hello
+[2.699s] running install
+[2.715s] running install_lib
+[2.746s] copying /home/shinnosuke/projects/ros2-learning/ros_ws/build/1hz_hello/build/lib/1hz_hello/hello.py -> /home/shinnosuke/projects/ros2-learning/ros_ws/install/1hz_hello/lib/python3.12/site-packages/1hz_hello
+[2.747s] byte-compiling /home/shinnosuke/projects/ros2-learning/ros_ws/install/1hz_hello/lib/python3.12/site-packages/1hz_hello/hello.py to hello.cpython-312.pyc
+[2.749s] running install_data
+[2.749s] running install_egg_info
+[2.782s] removing '/home/shinnosuke/projects/ros2-learning/ros_ws/install/1hz_hello/lib/python3.12/site-packages/1hz_hello-0.0.0-py3.12.egg-info' (and everything under it)
+[2.782s] Copying ../../build/1hz_hello/1hz_hello.egg-info to /home/shinnosuke/projects/ros2-learning/ros_ws/install/1hz_hello/lib/python3.12/site-packages/1hz_hello-0.0.0-py3.12.egg-info
+[2.784s] running install_scripts
+[3.014s] Installing hello1hz script to /home/shinnosuke/projects/ros2-learning/ros_ws/install/1hz_hello/lib/1hz_hello
+[3.015s] writing list of installed files to '/home/shinnosuke/projects/ros2-learning/ros_ws/build/1hz_hello/install.log'
+[3.073s] Invoked command in '/home/shinnosuke/projects/ros2-learning/ros_ws/src/1hz_hello' returned '0': PYTHONPATH=/home/shinnosuke/projects/ros2-learning/ros_ws/build/1hz_hello/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shinnosuke/projects/ros2-learning/ros_ws/install/1hz_hello/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/1hz_hello build --build-base /home/shinnosuke/projects/ros2-learning/ros_ws/build/1hz_hello/build install --record /home/shinnosuke/projects/ros2-learning/ros_ws/build/1hz_hello/install.log --single-version-externally-managed install_data

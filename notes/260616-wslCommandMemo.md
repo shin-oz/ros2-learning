@@ -4,6 +4,9 @@ uname -a
 - OS情報ファイルを表示する 
 cat /etc/os-release
 
+- git restore --staged .
+staging areaから戻す
+
 - linuxのパッケージの更新
 sudo apt-get update
 

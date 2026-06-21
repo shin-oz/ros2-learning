@@ -163,6 +163,8 @@ entry_points={
 cd ~/ros_ws
 # src/を探しにいくため、~/ros2_ws/でbuildすること
 colcon build
+# --packages-selectでsrc内のファイルを選択可能
+# colcon build --packages-select 1hz_hello
 ```
 
 下記ディレクトリができる

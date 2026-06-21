@@ -5,27 +5,23 @@ class Hello1hz(Node):
   def __init__(self):
     super().__init__('hello1hz')
 
-  def run(self):
-    # create_rate()はnode classのmethod
-    # 1hzで設定する
-    rate = self.create_rate(1)
+    self.count = 0
+    self.timer = self.create_timer(1.0, self.timer_callback)
 
-    count = 0
-    while rclpy.ok(): #rclpy.ok() ROSが正常かどうか確認->True/Falseが戻り値
-      self.get_logger().info(f'Hello world {count}')
-      count += 1
-      rate.sleep() #rateが経過するまで待機
+  # 単純なwhile rclpy.ok()では中断されるまでrclpy.spin(node)が呼ばれずtimerにならなかった
+  # rclpy.spin(node)はnodeを実行し続け登録されているcallbackを実際に呼び出すevent loop
+  def timer_callback(self):
+    self.get_logger().info(f"Hello world {self.count}")
+    self.count += 1
 
 def main(args=None):
   rclpy.init(args=args)
-
   node = Hello1hz()
 
   try:
-    node.run()
-  except KeyboardInterrupt: # KeybordInterrupt: pythonの組み込みexception class
+    rclpy.spin(node)
+  except KeyboardInterrupt:
     pass
-
   node.destroy_node()
   rclpy.shutdown()
 
