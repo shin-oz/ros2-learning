@@ -10,7 +10,8 @@ ros2とは
 
 - ROS master
 各nodeを管理し、node間を接続するサーバ
-rescore子安堵によってROS masterを起動する
+rescoreコマンドによってROS masterを起動する
+**ROS2で削除された概念**
 
 - Message
 node間でやりとりされる情報
