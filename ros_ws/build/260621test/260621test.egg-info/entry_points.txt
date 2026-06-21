@@ -1,0 +1,2 @@
+[console_scripts]
+hello_node = 260621test.hello_node:main

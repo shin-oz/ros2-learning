@@ -108,8 +108,8 @@ src/my_package
 ├── setup.py # build時に利用する設定ファイル
 ├── setup.cfg # python packageをどうインストールするか定義
 ├── resource
-│   └── my_package # buildするとこのファイルがinstall/に登録される。nodeはここで作成
-└── my_package
+│   └── my_package # buildするとこのファイルがinstall/に登録される。
+└── my_package # この中にpackageを作成する
     └── __init__.py # 他ファイルからimportできるようにpythonモジュールであることを宣言
 ```
 
@@ -181,37 +181,3 @@ source install/setup.bash
 # my_learning_ros2 packageのsetup.pyにあるhello_nodeの実行ファイルを実行する
 ros2 run my_learning_ros2 hello_node
 ```
-
-
-## 260619このフォルダ構成でできた
-```
-ros_ws/
-└── src/
-    └── my_learning_ros2/
-        ├── my_learning_ros2/
-        │   ├── __init__.py
-        │   └── hello_node.py
-        ├── resource/
-        │   └── my_learning_ros2    ← このファイルが必要（中身は空でOK）
-        ├── package.xml
-        └── setup.py
-```
-これでros_wsで`colcon build`した
-そのあと
-source install/setup.bash
-ros2 run my_learning_ros2 hello_node
-
--> エディタのtabは2だが、コード生成でtab4になっていた。。
-
-shinnosuke@5oz:~/projects/ros2-learning/ros_ws$ rm -rf build install log
-
-colcon build --event-handlers console_direct+ これはなんだ？
-
-shinnosuke@5oz:~/projects/ros2-learning/ros_ws/src/my_learning_ros2$ cat setup.cfg 
-[develop]
-script_dir=$base/lib/my_learning_ros2
-[install]
-install_scripts=$base/lib/my_learning_ros2
-shinnosuke@5oz:~/projects/ros2-learning/ros_w
-
-これしたらできたのはなぜだ？
