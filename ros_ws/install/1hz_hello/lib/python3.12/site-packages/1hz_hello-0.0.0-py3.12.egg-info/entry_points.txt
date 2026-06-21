@@ -1,0 +1,2 @@
+[console_scripts]
+hello1hz = 1hz_hello.hello:main

@@ -1,0 +1,22 @@
+running egg_info
+writing ../../build/260621test/260621test.egg-info/PKG-INFO
+writing dependency_links to ../../build/260621test/260621test.egg-info/dependency_links.txt
+writing entry points to ../../build/260621test/260621test.egg-info/entry_points.txt
+writing requirements to ../../build/260621test/260621test.egg-info/requires.txt
+writing top-level names to ../../build/260621test/260621test.egg-info/top_level.txt
+reading manifest file '../../build/260621test/260621test.egg-info/SOURCES.txt'
+writing manifest file '../../build/260621test/260621test.egg-info/SOURCES.txt'
+running build
+running build_py
+copying 260621test/hello_node.py -> /home/shinnosuke/projects/ros2-learning/ros_ws/build/260621test/build/lib/260621test
+running install
+running install_lib
+copying /home/shinnosuke/projects/ros2-learning/ros_ws/build/260621test/build/lib/260621test/hello_node.py -> /home/shinnosuke/projects/ros2-learning/ros_ws/install/260621test/lib/python3.12/site-packages/260621test
+byte-compiling /home/shinnosuke/projects/ros2-learning/ros_ws/install/260621test/lib/python3.12/site-packages/260621test/hello_node.py to hello_node.cpython-312.pyc
+running install_data
+running install_egg_info
+removing '/home/shinnosuke/projects/ros2-learning/ros_ws/install/260621test/lib/python3.12/site-packages/260621test-0.0.0-py3.12.egg-info' (and everything under it)
+Copying ../../build/260621test/260621test.egg-info to /home/shinnosuke/projects/ros2-learning/ros_ws/install/260621test/lib/python3.12/site-packages/260621test-0.0.0-py3.12.egg-info
+running install_scripts
+Installing hello_node script to /home/shinnosuke/projects/ros2-learning/ros_ws/install/260621test/lib/260621test
+writing list of installed files to '/home/shinnosuke/projects/ros2-learning/ros_ws/build/260621test/install.log'
