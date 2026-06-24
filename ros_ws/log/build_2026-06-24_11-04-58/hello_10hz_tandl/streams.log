@@ -1,0 +1,41 @@
+[0.807s] Invoking command in '/home/shinnosuke/projects/ros2-learning/ros_ws/src/hello_10hz_tandl': PYTHONPATH=/home/shinnosuke/projects/ros2-learning/ros_ws/build/hello_10hz_tandl/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shinnosuke/projects/ros2-learning/ros_ws/install/hello_10hz_tandl/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hello_10hz_tandl build --build-base /home/shinnosuke/projects/ros2-learning/ros_ws/build/hello_10hz_tandl/build install --record /home/shinnosuke/projects/ros2-learning/ros_ws/build/hello_10hz_tandl/install.log --single-version-externally-managed install_data
+[1.035s] running egg_info
+[1.036s] creating ../../build/hello_10hz_tandl/hello_10hz_tandl.egg-info
+[1.050s] writing ../../build/hello_10hz_tandl/hello_10hz_tandl.egg-info/PKG-INFO
+[1.050s] writing dependency_links to ../../build/hello_10hz_tandl/hello_10hz_tandl.egg-info/dependency_links.txt
+[1.050s] writing entry points to ../../build/hello_10hz_tandl/hello_10hz_tandl.egg-info/entry_points.txt
+[1.050s] writing requirements to ../../build/hello_10hz_tandl/hello_10hz_tandl.egg-info/requires.txt
+[1.051s] writing top-level names to ../../build/hello_10hz_tandl/hello_10hz_tandl.egg-info/top_level.txt
+[1.051s] writing manifest file '../../build/hello_10hz_tandl/hello_10hz_tandl.egg-info/SOURCES.txt'
+[1.082s] reading manifest file '../../build/hello_10hz_tandl/hello_10hz_tandl.egg-info/SOURCES.txt'
+[1.082s] writing manifest file '../../build/hello_10hz_tandl/hello_10hz_tandl.egg-info/SOURCES.txt'
+[1.083s] running build
+[1.083s] running build_py
+[1.083s] creating /home/shinnosuke/projects/ros2-learning/ros_ws/build/hello_10hz_tandl/build
+[1.084s] creating /home/shinnosuke/projects/ros2-learning/ros_ws/build/hello_10hz_tandl/build/lib
+[1.084s] creating /home/shinnosuke/projects/ros2-learning/ros_ws/build/hello_10hz_tandl/build/lib/hello_10hz_tandl
+[1.084s] copying hello_10hz_tandl/listner.py -> /home/shinnosuke/projects/ros2-learning/ros_ws/build/hello_10hz_tandl/build/lib/hello_10hz_tandl
+[1.084s] copying hello_10hz_tandl/__init__.py -> /home/shinnosuke/projects/ros2-learning/ros_ws/build/hello_10hz_tandl/build/lib/hello_10hz_tandl
+[1.084s] copying hello_10hz_tandl/talker.py -> /home/shinnosuke/projects/ros2-learning/ros_ws/build/hello_10hz_tandl/build/lib/hello_10hz_tandl
+[1.085s] running install
+[1.090s] running install_lib
+[1.104s] creating /home/shinnosuke/projects/ros2-learning/ros_ws/install/hello_10hz_tandl/lib/python3.12/site-packages/hello_10hz_tandl
+[1.104s] copying /home/shinnosuke/projects/ros2-learning/ros_ws/build/hello_10hz_tandl/build/lib/hello_10hz_tandl/listner.py -> /home/shinnosuke/projects/ros2-learning/ros_ws/install/hello_10hz_tandl/lib/python3.12/site-packages/hello_10hz_tandl
+[1.105s] copying /home/shinnosuke/projects/ros2-learning/ros_ws/build/hello_10hz_tandl/build/lib/hello_10hz_tandl/__init__.py -> /home/shinnosuke/projects/ros2-learning/ros_ws/install/hello_10hz_tandl/lib/python3.12/site-packages/hello_10hz_tandl
+[1.105s] copying /home/shinnosuke/projects/ros2-learning/ros_ws/build/hello_10hz_tandl/build/lib/hello_10hz_tandl/talker.py -> /home/shinnosuke/projects/ros2-learning/ros_ws/install/hello_10hz_tandl/lib/python3.12/site-packages/hello_10hz_tandl
+[1.105s] byte-compiling /home/shinnosuke/projects/ros2-learning/ros_ws/install/hello_10hz_tandl/lib/python3.12/site-packages/hello_10hz_tandl/listner.py to listner.cpython-312.pyc
+[1.106s] byte-compiling /home/shinnosuke/projects/ros2-learning/ros_ws/install/hello_10hz_tandl/lib/python3.12/site-packages/hello_10hz_tandl/__init__.py to __init__.cpython-312.pyc
+[1.106s] byte-compiling /home/shinnosuke/projects/ros2-learning/ros_ws/install/hello_10hz_tandl/lib/python3.12/site-packages/hello_10hz_tandl/talker.py to talker.cpython-312.pyc
+[1.107s] running install_data
+[1.107s] creating /home/shinnosuke/projects/ros2-learning/ros_ws/install/hello_10hz_tandl/share/ament_index
+[1.107s] creating /home/shinnosuke/projects/ros2-learning/ros_ws/install/hello_10hz_tandl/share/ament_index/resource_index
+[1.108s] creating /home/shinnosuke/projects/ros2-learning/ros_ws/install/hello_10hz_tandl/share/ament_index/resource_index/packages
+[1.108s] copying resource/hello_10hz_tandl -> /home/shinnosuke/projects/ros2-learning/ros_ws/install/hello_10hz_tandl/share/ament_index/resource_index/packages
+[1.108s] copying package.xml -> /home/shinnosuke/projects/ros2-learning/ros_ws/install/hello_10hz_tandl/share/hello_10hz_tandl
+[1.108s] running install_egg_info
+[1.126s] Copying ../../build/hello_10hz_tandl/hello_10hz_tandl.egg-info to /home/shinnosuke/projects/ros2-learning/ros_ws/install/hello_10hz_tandl/lib/python3.12/site-packages/hello_10hz_tandl-0.0.0-py3.12.egg-info
+[1.127s] running install_scripts
+[1.236s] Installing listner script to /home/shinnosuke/projects/ros2-learning/ros_ws/install/hello_10hz_tandl/lib/hello_10hz_tandl
+[1.236s] Installing talker script to /home/shinnosuke/projects/ros2-learning/ros_ws/install/hello_10hz_tandl/lib/hello_10hz_tandl
+[1.236s] writing list of installed files to '/home/shinnosuke/projects/ros2-learning/ros_ws/build/hello_10hz_tandl/install.log'
+[1.291s] Invoked command in '/home/shinnosuke/projects/ros2-learning/ros_ws/src/hello_10hz_tandl' returned '0': PYTHONPATH=/home/shinnosuke/projects/ros2-learning/ros_ws/build/hello_10hz_tandl/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shinnosuke/projects/ros2-learning/ros_ws/install/hello_10hz_tandl/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/hello_10hz_tandl build --build-base /home/shinnosuke/projects/ros2-learning/ros_ws/build/hello_10hz_tandl/build install --record /home/shinnosuke/projects/ros2-learning/ros_ws/build/hello_10hz_tandl/install.log --single-version-externally-managed install_data

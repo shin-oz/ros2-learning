@@ -1,0 +1,17 @@
+package.xml
+setup.cfg
+setup.py
+../../build/hello_10hz_tandl/hello_10hz_tandl.egg-info/PKG-INFO
+../../build/hello_10hz_tandl/hello_10hz_tandl.egg-info/SOURCES.txt
+../../build/hello_10hz_tandl/hello_10hz_tandl.egg-info/dependency_links.txt
+../../build/hello_10hz_tandl/hello_10hz_tandl.egg-info/entry_points.txt
+../../build/hello_10hz_tandl/hello_10hz_tandl.egg-info/requires.txt
+../../build/hello_10hz_tandl/hello_10hz_tandl.egg-info/top_level.txt
+../../build/hello_10hz_tandl/hello_10hz_tandl.egg-info/zip-safe
+hello_10hz_tandl/__init__.py
+hello_10hz_tandl/listner.py
+hello_10hz_tandl/talker.py
+resource/hello_10hz_tandl
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

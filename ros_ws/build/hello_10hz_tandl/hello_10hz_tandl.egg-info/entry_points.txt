@@ -1,0 +1,3 @@
+[console_scripts]
+listner = hello_10hz_tandl.listner:main
+talker = hello_10hz_tandl.talker:main

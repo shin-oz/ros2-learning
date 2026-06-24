@@ -1,0 +1,102 @@
+[0.571s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'hello_10hz_TandL/']
+[0.572s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['hello_10hz_TandL/'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x78860bcfe390>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x78860bcfd910>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x78860bcfd910>>)
+[0.719s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.719s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.719s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.719s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.719s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.720s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.720s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/shinnosuke/projects/ros2-learning/ros_ws/src'
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.818s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.818s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.818s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.818s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.818s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.819s] Level 1:colcon.colcon_core.package_identification:_identify(1hz_hello) by extensions ['ignore', 'ignore_ament_install']
+[0.819s] Level 1:colcon.colcon_core.package_identification:_identify(1hz_hello) by extension 'ignore'
+[0.819s] Level 1:colcon.colcon_core.package_identification:_identify(1hz_hello) by extension 'ignore_ament_install'
+[0.819s] Level 1:colcon.colcon_core.package_identification:_identify(1hz_hello) by extensions ['colcon_pkg']
+[0.819s] Level 1:colcon.colcon_core.package_identification:_identify(1hz_hello) by extension 'colcon_pkg'
+[0.820s] Level 1:colcon.colcon_core.package_identification:_identify(1hz_hello) by extensions ['colcon_meta']
+[0.820s] Level 1:colcon.colcon_core.package_identification:_identify(1hz_hello) by extension 'colcon_meta'
+[0.820s] Level 1:colcon.colcon_core.package_identification:_identify(1hz_hello) by extensions ['ros']
+[0.820s] Level 1:colcon.colcon_core.package_identification:_identify(1hz_hello) by extension 'ros'
+[0.836s] DEBUG:colcon.colcon_core.package_identification:Package '1hz_hello' with type 'ros.ament_python' and name '1hz_hello'
+[0.836s] Level 1:colcon.colcon_core.package_identification:_identify(260621test) by extensions ['ignore', 'ignore_ament_install']
+[0.836s] Level 1:colcon.colcon_core.package_identification:_identify(260621test) by extension 'ignore'
+[0.836s] Level 1:colcon.colcon_core.package_identification:_identify(260621test) by extension 'ignore_ament_install'
+[0.837s] Level 1:colcon.colcon_core.package_identification:_identify(260621test) by extensions ['colcon_pkg']
+[0.837s] Level 1:colcon.colcon_core.package_identification:_identify(260621test) by extension 'colcon_pkg'
+[0.837s] Level 1:colcon.colcon_core.package_identification:_identify(260621test) by extensions ['colcon_meta']
+[0.837s] Level 1:colcon.colcon_core.package_identification:_identify(260621test) by extension 'colcon_meta'
+[0.837s] Level 1:colcon.colcon_core.package_identification:_identify(260621test) by extensions ['ros']
+[0.837s] Level 1:colcon.colcon_core.package_identification:_identify(260621test) by extension 'ros'
+[0.841s] DEBUG:colcon.colcon_core.package_identification:Package '260621test' with type 'ros.ament_python' and name '260621test'
+[0.841s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.842s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.842s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.843s] Level 1:colcon.colcon_core.package_identification:_identify(hello_10hz_TandL) by extensions ['ignore', 'ignore_ament_install']
+[0.843s] Level 1:colcon.colcon_core.package_identification:_identify(hello_10hz_TandL) by extension 'ignore'
+[0.845s] Level 1:colcon.colcon_core.package_identification:_identify(hello_10hz_TandL) by extension 'ignore_ament_install'
+[0.846s] Level 1:colcon.colcon_core.package_identification:_identify(hello_10hz_TandL) by extensions ['colcon_pkg']
+[0.846s] Level 1:colcon.colcon_core.package_identification:_identify(hello_10hz_TandL) by extension 'colcon_pkg'
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(hello_10hz_TandL) by extensions ['colcon_meta']
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(hello_10hz_TandL) by extension 'colcon_meta'
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(hello_10hz_TandL) by extensions ['ros']
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(hello_10hz_TandL) by extension 'ros'
+[0.851s] DEBUG:colcon.colcon_core.package_identification:Package 'hello_10hz_TandL' with type 'ros.ament_python' and name 'hello_10hz-TandL'
+[0.852s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.852s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.853s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.853s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.853s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.854s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.854s] Level 1:colcon.colcon_core.package_identification:_identify(my_learning_ros2) by extensions ['ignore', 'ignore_ament_install']
+[0.855s] Level 1:colcon.colcon_core.package_identification:_identify(my_learning_ros2) by extension 'ignore'
+[0.856s] Level 1:colcon.colcon_core.package_identification:_identify(my_learning_ros2) by extension 'ignore_ament_install'
+[0.856s] Level 1:colcon.colcon_core.package_identification:_identify(my_learning_ros2) by extensions ['colcon_pkg']
+[0.856s] Level 1:colcon.colcon_core.package_identification:_identify(my_learning_ros2) by extension 'colcon_pkg'
+[0.856s] Level 1:colcon.colcon_core.package_identification:_identify(my_learning_ros2) by extensions ['colcon_meta']
+[0.856s] Level 1:colcon.colcon_core.package_identification:_identify(my_learning_ros2) by extension 'colcon_meta'
+[0.856s] Level 1:colcon.colcon_core.package_identification:_identify(my_learning_ros2) by extensions ['ros']
+[0.856s] Level 1:colcon.colcon_core.package_identification:_identify(my_learning_ros2) by extension 'ros'
+[0.858s] DEBUG:colcon.colcon_core.package_identification:Package 'my_learning_ros2' with type 'ros.ament_python' and name 'my_learning_ros2'
+[0.859s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.859s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.859s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.859s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.859s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.859s] WARNING:colcon.colcon_core.package_selection:ignoring unknown package 'hello_10hz_TandL/' in --packages-select
+[0.944s] INFO:colcon.colcon_core.package_selection:Skipping not selected package '1hz_hello' in '1hz_hello'
+[0.944s] INFO:colcon.colcon_core.package_selection:Skipping not selected package '260621test' in '260621test'
+[0.944s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'hello_10hz-TandL' in 'hello_10hz_TandL'
+[0.944s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'my_learning_ros2' in 'my_learning_ros2'
+[0.944s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.946s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.946s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[0.947s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[0.947s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[0.947s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[0.993s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[0.993s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[0.993s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[0.993s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[0.999s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[1.000s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.012s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.013s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/shinnosuke/projects/ros2-learning/ros_ws/src/install/local_setup.sh'
+[1.015s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/shinnosuke/projects/ros2-learning/ros_ws/src/install/_local_setup_util_sh.py'
+[1.018s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/shinnosuke/projects/ros2-learning/ros_ws/src/install/setup.sh'
+[1.028s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/shinnosuke/projects/ros2-learning/ros_ws/src/install/local_setup.bash'
+[1.031s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/shinnosuke/projects/ros2-learning/ros_ws/src/install/setup.bash'
+[1.034s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/shinnosuke/projects/ros2-learning/ros_ws/src/install/local_setup.zsh'
+[1.035s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/shinnosuke/projects/ros2-learning/ros_ws/src/install/setup.zsh'

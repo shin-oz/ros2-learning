@@ -1,0 +1,4 @@
+source;share/hello_10hz_tandl/hook/pythonpath.dsv
+source;share/hello_10hz_tandl/hook/pythonpath.sh
+source;share/hello_10hz_tandl/hook/ament_prefix_path.dsv
+source;share/hello_10hz_tandl/hook/ament_prefix_path.sh
