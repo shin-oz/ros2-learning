@@ -41,7 +41,7 @@ Imageをもとに作成された実行中の環境
 -d containerをbackgroundで実行
 -it 対話モードでコマンドラインから操作
 
-- continerに接続
+- 起動中のcontinerに接続
 `docker exec -it mytest bash`
 eixtで抜けてもcontinerはbackgroundで起動している
 
@@ -110,4 +110,56 @@ Topic通信はPub/Subモデル、非同期、一方向通信
 - linear x: 直進速度
 - angular z: 回転速度
 
-<!-- linear xとangular zが何かについてまとめる -->
+## pythonパッケージを作成する
+1. wsを作成する
+ws ->ros2 packageをまとめて管理・buildするための作業スペース
+ros2では機能ごとにpackageでまとめる
+
+2. $ws$/src内で`ros2 pkg create my_py_pkg --build-type ament_python --dependencies rclpy std_msgs geometry_msgs`
+ros2 pkg create $package名$ --build-type ament_python --dependencies
+--dependenciesでこのpackageが使用する他packageの依存関係を示す
+
+**ros2 pkg createするときの--dependenciesを間違えてstd masgsになってるので修正必要**
+
+```
+$package名$/package.xml ->packageの基本情報(名前など)と依存関係(rclpyやstd_msgsなど)
+$package名$/setup.py ->python package installのための設定を記述。ros2 runのためのentry pointを記述しておく
+$package名$/$package名$/ ->この中にpython packageを記述していく　
+$package名$/init.py ->python実行に必要で、編集扶養
+```
+- $package名$/setup.py のentry pointで\$node名\$で起動できるようにする
+'$node名$ = $package名$.$file名$:main'
+
+- $package名$/$package名$/my_node.py
+```python
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+
+class MinimalPublisher(Node):
+  def __init__(self):
+    super().__init__('minimal_publisher')
+    # String型msgをChatter topicへ送信、buffer sizeは10
+    self.publisher_ = self.create_publisher(String, 'chatter', 10)
+    timer_period = 1.0 # 1秒ごと
+    self.timer = self.create_timer(timer_period, self.timer_callback)
+    self.count = 0
+
+  def timer_callback(self):
+    msg = String()
+    msg.data = f'Hello {self.count}'
+    self.publisher_.publish(msg)
+    self.get_logger().info(f'Publishing: "{msg.data}"')
+    self.count += 1
+
+def main(args=None):
+  rclpy.init(args=args)
+  node = MinimalPublisher()
+  rclpy.spin(node)
+  node.destroy_node()
+  rclpy.shutdown()
+````
+
+- `cd ~/colcon_ws`
+- `source ~/colcon_ws/install/setup.bash `
+- `ros2 run my_py_pkg my_node`
