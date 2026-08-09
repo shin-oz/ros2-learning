@@ -34,6 +34,7 @@ Imageをもとに作成された実行中の環境
 
 - 起動中のcontinerに接続
 `docker exec -it mytest bash`
+container内のbashシェルにログインする
 eixtで抜けてもcontinerはbackgroundで起動している
 
 - containerを停止
@@ -59,6 +60,8 @@ docker run -it --rm --net=host \
  --env QT_X11_NO_MITSHM=1 \
  --volume /tmp/.X11-unix:/tmp/.X11-unix \
  osrf/ros:jazzy-desktop
+<!-- -it -->
+<!-- 対話モードで入る -->
 <!-- --rm -->
 <!-- containerを止めると自動で削除する -->
 <!-- --net=host -->
