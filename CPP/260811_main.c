@@ -38,12 +38,51 @@ void main() {
   //#####演算と変数のメモここまで 
   
   // #####ここから条件分岐メモ
-  int a;
-  printf("数値を入力: ");
-  scanf("%d", &a);
+  // int num;
+  // printf("1~3の値を入力してください: ");
+  // scanf("%d", &num);
 
-  if (a > 0) {
-    printf("入力した値は、正の数です。\n");
+  // if (num == 1) {
+  //   printf("one \n");
+  // } else if (num == 2) {
+  //   printf("two\n");
+  // } else if (num == 3) {
+  //   printf("three \n");
+  // } else {
+  //   printf("不適切な値です\n");
+  // }
+
+  // int dice;
+  // printf("1から6の数値を入力してください:");
+  // scanf("%d", &dice);
+  // if (1 <= dice && dice<= 6) {
+  //   if (dice == 2 || dice == 4 || dice == 6) {
+  //     printf("チョウです。\n");
+  //   }
+  //   else {
+  //     printf("ハンです。\n");
+  //   }
+  // }
+  // else {
+  //   printf("範囲外の数値です。\n");
+  // }
+
+  int num;
+  printf("1~3の数値を入力してください:");
+  scanf("%d", &num);
+
+  switch (num) {
+    case 1:
+      printf("one\n");
+      break;
+    case 2:
+      printf("two\n");
+      break;
+    case 3:
+      printf("three\n");
+      break;
+    default:
+      printf("不適切な値です。\n");
   }
 
 }
