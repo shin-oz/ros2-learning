@@ -15,15 +15,16 @@ ros2とは
 アプリケーションの構成単位
 複数のnodeによりpackage(アプリケーション)が構成される
 
-- ROS master **ROS2で削除された概念**
+<!-- - ROS master **ROS2で削除された概念**
 各nodeを管理し、node間を接続するサーバ
-rescoreコマンドによってROS masterを起動する
+rescoreコマンドによってROS masterを起動する -->
 
 - Message
 node間でやりとりされる情報
 一方向のTopicと双方向のServiceがある
 
 - node
+各プログラムはnodeとして独立して動作し、nodeどうしはtopic/service/actionなどの通信機構を使って情報をやりとりする
 単純なlinuxプログラムの個々
 センサから数値を読み取る、モータの回転数を制御する　など
 例えばLidarを用いた自己位置推定では、センサドライバ→センサデータ処理→自己位置推定の３つのノードが動作する
@@ -31,10 +32,28 @@ node間でやりとりされる情報
 - Topic通信
 Node間でMessageをやりとりするための名前付きパス
 Publish/Subscribeモデルで、1対N通信の非同期通信
-カメラからの画像生データをTopicとして配信: Publish
+カメラからの画像生データをTopicに対して配信: Publish
 車検知のノードでTopicを購読: Subscirbe
 歩行者検知のノードでTopicを購読: Subscirbe
 メリット：データ型を合わせるだけでNode追加が可能
+例えばTurtlesimの場合、/turtlesim1/cmd_velや/turtlesim1/poseがtopic通信の例
+
+topicに対してどのようなメッセージ型で送るか定義する必要がある
+/turtlesim1/cmd_vel topicでは、geometry_msgs.msg.twist型を使う
+twist型は線形速度linearと各速度angularをもつ
+
+※起動ターミナルで初期化コマンドが読み出されていない場合は環境変数読み出しが必要
+`source /opt/ros/jazzy/setup.bash`
+
+`ros2 topic pub topic名 msg型"{, ,...}" `でコマンドを送る
+`ros2 topic pub -r 5 /turtle1/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 1.0}, angular:{z: 0.0}}"`
+
+別のnodeやuserがtopicをsubscribeすることで現在の状態やセンサーデータを取得できる
+`ros2 topic echo`でtopicデータをリアルタイムで観察する
+これがsubscribeコマンドになる
+`ros2 topic echo /turtle1/cmd_vel`
+`ros2 topic echo /turtle1/pose`
+
 
 - Service通信
 serviceをrequestするclientとresponseを返すserver間で交わされる1対1通信の同期通信
