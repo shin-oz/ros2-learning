@@ -2,6 +2,22 @@
 // .hはC言語のヘッダファイル拡張子
 # include <stdio.h>
 
+// グローバル変数のメモ
+int global = 10;
+
+// プロトタイプ宣言
+void func1(double, int);
+void func2();
+
+// // 関数のメモ
+// double avg(double l, double m) {
+//   double r = ( l + m ) / 2;
+//   return r;
+// }
+
+// 関数のプロトタイプ宣言のメモ
+// double avg(double, double);
+
 void main() {
   // #####ここから演算と変数の実行メモ
   // // %s: 後に続く文字列を出力する
@@ -148,19 +164,63 @@ void main() {
   // printf("s2 = %s\n", s2);
   // printf("s3 = %s\n", s3);
 
-  int a[3][4];
-  int m,n;
+  // int a[3][4];
+  // int m,n;
   
-  for (m = 0; m < 3; m++) {
-    for (n = 0; n < 4; n++) {
-      a[m][n] = m + n;
-    }
-  }
+  // for (m = 0; m < 3; m++) {
+  //   for (n = 0; n < 4; n++) {
+  //     a[m][n] = m + n;
+  //   }
+  // }
 
-  for (m = 0; m < 3; m++) {
-    for (n = 0; n < 4; n++) {
-      printf("%d ", a[m][n]);
-    }
-    printf("\n");
-  }
+  // for (m = 0; m < 3; m++) {
+  //   for (n = 0; n < 4; n++) {
+  //     printf("%d ", a[m][n]);
+  //   }
+  //   printf("\n");
+  // }
+  //##### 配列のメモここまで 
+
+  // 関数のメモ（続き）
+  // double d1, d2, d3, d4;
+  // double a = 1.2, b = 3.4, c = 2.7;
+
+  // d1 = avg(a,b);
+  // d2 = avg(4.1, 5.7);
+  // d3 = avg(c, 2.8);
+  // d4 = avg(2.0, 8.0);
+
+  // printf("d1 = %f,d2 = %f, d3 = %f\n", d1, d2, d3);
+
+  double a = 123.41;
+  int b = 100;
+  printf("main処理中\n");
+  printf("global=%d\n", global);
+  printf("a,b =%f, %d\n", a, b);
+  printf("********************\n");
+
+  func1(3.1, 4);
+  func2();
+}
+
+// 関数のプロトタイプ宣言のメモ
+// double avg(double l, double m) {
+//   double r = (l + m) / 2.0;
+//   return r;
+// }
+
+void func1(double a, int b) {
+  printf("func1処理中\n");
+  printf("global=%d\n", global);
+  printf("a=%f b=%d\n", a, b);
+  printf("********************\n");
+}
+
+void func2() {
+  double a = -4.1;
+  int b =2;
+  printf("func2処理中\n");
+  printf("global=%d\n", global);
+  printf("a=%f b=%d\n", a, b);
+  printf("********************\n");
 }
