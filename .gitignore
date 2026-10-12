@@ -1,0 +1,20 @@
+# ROS2 (colcon) build outputs
+# `colcon build`で作られるフォルダ
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+
+# C: compiled binaries (files without an extension under CPP/)
+# CPP/以下を全て無視
+CPP/**/*
+# CPP/以下のフォルダは無視の対象から外す
+!CPP/**/
+# CPP/以下の.がつくファイルは無視の対象から外す
+!CPP/**/*.*
+
+# VSCode Code Runner temp files
+tempCodeRunnerFile*
