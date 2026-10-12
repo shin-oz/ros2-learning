@@ -30,7 +30,7 @@ ros2-learning/
 - [x] ROS2 environment setup on WSL2 / Docker
 - [x] rclpy publisher / subscriber with timer
 - [x] C fundamentals: pointers, multi-file build with headers, file I/O
-- [ ] C++ fundamentals(in progress)
+- [ ] C++ fundamentals (in progress)
 - [ ] Port talker / listener from rclpy to rclcpp
 - [ ] Dockerfile / compose for a reproducible environment
 - [ ] Autoware architecture study
