@@ -23,7 +23,7 @@ CRat:: ~CRat() {
 void CRat::showNum() {
   cout << "現在のネズミの数は、" << m_count << "匹です。" << endl;
   // m_idは静的なメンバ変数なので、インスタンスごとに異なる値が来る部分には使えない
-  cout << m_id << endl;
+  // cout << m_id << endl;
 }
 
 // ネズミがなく
