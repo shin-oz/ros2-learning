@@ -1,0 +1,15 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  cout << "ABC" << endl;
+  // 処理の途中で変数を宣言
+  for (int i = 0; i < 10; i++) {
+    cout << ":" << i;
+  }
+
+  cout << endl;
+
+  return 0;
+}
