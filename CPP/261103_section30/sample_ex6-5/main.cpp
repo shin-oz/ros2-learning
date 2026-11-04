@@ -7,7 +7,9 @@ void bar(IInf2*);
 
 int main() {
   CSample * s = new CSample();
+  // IInf1でキャストするため、func3()とfunc4()は使えない
   foo((IInf1*)s);
+  // IInf2でキャストするため、func3()とfunc4()は使えない
   bar((IInf2*)s);
 
   return 0;
