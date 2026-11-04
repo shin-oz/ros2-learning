@@ -9,6 +9,7 @@ using namespace std;
 class CBird {
   public:
     // 鳴く関数：仮想関数
+    // 継承するサブクラスで影響あり
     virtual void sing() { cout << "鳥が鳴きます" << endl; }
     // 飛ぶ関数
     virtual void fly() { cout << "鳥が飛びます　" << endl; }

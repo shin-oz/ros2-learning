@@ -2,6 +2,7 @@
 #define _SUP2_H_
 
 #include <iostream>
+using namespace std;
 
 class CSup2 {
   public:

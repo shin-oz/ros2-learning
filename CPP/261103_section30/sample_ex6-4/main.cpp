@@ -8,7 +8,8 @@ using namespace std;
 
 int main() {
   CSup1 *s1 = new CSub1();
-  CSup2 *s2 = new CSub2();
+  // CSup1はvirtualで仮想関数になっているから、デストラクタが呼ばれる
+  CSup2 *s2 = new CSub2(); 
   delete s1;
   delete s2;
 
