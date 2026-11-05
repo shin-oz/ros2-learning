@@ -15,8 +15,8 @@ setup(
     zip_safe=True,
     maintainer='shinnosuke',
     maintainer_email='purishin1215@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='Minimal rclpy talker / listener exchanging std_msgs/String on /chatter',
+    license='Apache-2.0',
     extras_require={
         'test': [
             'pytest',
@@ -25,7 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
             'talker = hello_10hz_tandl.talker:main',
-            'listner = hello_10hz_tandl.listner:main',
+            'listener = hello_10hz_tandl.listener:main',
         ],
     },
 )

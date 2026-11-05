@@ -280,3 +280,12 @@ def main(args=None):
 - `cd ~/colcon_ws`
 - `source ~/colcon_ws/install/setup.bash `
 - `ros2 run my_py_pkg my_node`
+
+## talker / listener を書いたときのメモ
+
+- publisher と subscriber は、トピック名とメッセージ型が一致すれば DDS が自動で接続する（ROS 1 のような ROS master は不要）
+- `create_publisher()` / `create_subscription()` は rclpy の `Node` クラスのメソッド。自作クラスは Node を継承しているので `self.` で呼べる
+- `self.publisher_` の末尾の `_` は、ROS 2 公式チュートリアルの書き方に合わせたもの（親クラスの属性名とかぶらないようにする慣例）
+- QoS の引数 `10` は depth（キューに保持するメッセージ数）
+- publisher は送るタイミングを自分で決めるので callback は不要。subscriber はいつ届くかわからないので、受信時に呼ばれる callback を登録する
+- `msg.data`：String 型はオブジェクトなので、中身は `data` フィールドに入れる

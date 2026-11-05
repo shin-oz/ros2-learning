@@ -10,7 +10,7 @@ class Talker(Node):
   def __init__(self):
     # 親クラスをもとにtalkerとしてROS2で使えるように宣言
     super().__init__('talker')
-    # publisherとlistnerでtopic名とメッセージ型が一致すれば自動的に繋がる
+    # publisherとlistenerでtopic名とメッセージ型が一致すれば自動的に繋がる
     # ↑はDDS ROS masterとは異なる
     # Node.create_publisher()methodはmsg型,topic名,Qos設定
     # Qos設定はque sizeを指定
@@ -18,8 +18,8 @@ class Talker(Node):
     # publisher側はいつメッセージ送るかは自分が決めるのでcallback関数は不要
     self.publisher_ = self.create_publisher(String, 'chatter', 10)
     self.count = 0
-    # Node.create_timer()methodは指定した感覚ごとにcallback関数を実行する
-    self.timer = self.create_timer(1.0, self.timer_callback)
+    # Node.create_timer()methodは指定した間隔ごとにcallback関数を実行する
+    self.timer = self.create_timer(0.1, self.timer_callback)
 
   def timer_callback(self):
     # topic通信が成立するようにString型で統一
@@ -32,7 +32,7 @@ class Talker(Node):
     self.count += 1
 
 def main(args=None):
-  # main()で受け取ったargsをrxpy.init()に渡す
+  # main()で受け取ったargsをrclpy.init()に渡す
   rclpy.init(args=args)
   node = Talker()
 

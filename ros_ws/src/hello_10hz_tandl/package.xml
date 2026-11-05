@@ -3,9 +3,9 @@
 <package format="3">
   <name>hello_10hz_tandl</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>Minimal rclpy talker / listener exchanging std_msgs/String on /chatter</description>
   <maintainer email="purishin1215@gmail.com">shinnosuke</maintainer>
-  <license>TODO: License declaration</license>
+  <license>Apache-2.0</license>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
@@ -14,7 +14,7 @@
 
   <!-- 
     std_msgsを使うので依存関係を追記 
-    このpackageを他の人が使う場合、どんなpackagaが必要か管理する
+    このpackageを他の人が使う場合、どんなpackageが必要か管理する
   -->
   <depend>std_msgs</depend>
 
