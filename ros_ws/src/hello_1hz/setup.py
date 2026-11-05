@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = '1hz_hello'
+package_name = 'hello_1hz'
 
 setup(
     name=package_name,
@@ -25,7 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
         # <!-- 実行名 = モジュール名.ファイル名:関数 -->
-        'hello1hz = 1hz_hello.hello:main',
+        'hello1hz = hello_1hz.hello:main',
         ],
     },
 )
