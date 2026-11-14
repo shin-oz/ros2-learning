@@ -1,4 +1,9 @@
 ## const参照渡しと値渡しとポインタ渡しの比較
+- 使い分けの基準
+int, double, bool, ポインタなど小さい型の場合は値渡し
+std::, std::vector, クラスを読むだけの場合は、const参照渡し
+呼び出し元を書き換える場合は参照渡し
+
 - 値渡し
 変数の値をコピー
 元の変数は変えられない
@@ -17,8 +22,8 @@
 - 参照渡し
 データもアドレスもコピーしない
 元の変数は変える
-大きなデータの読み取りに使う
-`const int& x`
+呼び出し元の変数を書き換えたい時　
+`int& x`
 `func(a)`
 
 - const参照渡し
@@ -29,13 +34,11 @@
 `func(a)`
 
 ### &と*の違い
-&aは変数aのアドレスを取得
-*aはポインタaが示す場所
-int&参照の意味
-&xはアドレスの意味
+宣言のときは &は参照、*はポインタ型
+式では&はアドレス取得、*は間接参照(ポインタの指す先)
 
 ## autoの使い方
-autoは変数の方をコンパイラが自動で推論してくれるキーワード
+autoは変数の型をコンパイラが自動で推論してくれるキーワード
 ```cpp
 aut a = 10; // int
 auto b = 3.14; // double
@@ -44,7 +47,7 @@ auto c = std::string("hage"); // std::string
 
 文字列をautoで代入しても、std::stringにはならない
 ```cpp
-auto a = "hage" // std::stringにはならない
+auto a = "hage" // const char*になる
 ```
 
 型名が長いときに便利
@@ -66,7 +69,7 @@ std::cout << a; // 10
 int a = 10;
 auto& b = a; // 参照渡し
 b = 100;
-std:cout << a; // 100
+std::cout << a; // 100
 ```
 
 ```cpp
@@ -85,6 +88,12 @@ auto b; // エラー
 ```cpp
 auto a = 10; // int
 a = 3.14; // intなので3になる
+```
+
+- autoは参照とconstを外す
+autoは値渡しと同じ規則で型を推論し新しいコピーを作る
+コピーなので参照もトップレベルのconstも外れる
+コピーを避けたいときはconst auto&と明示する
 
 ## 範囲forの使い方
 配列やstd::vectorなどの要素を先頭から順番に取り出して処理するための構文
@@ -93,4 +102,13 @@ std::vector<int> numbers = {10, 20, 30};
 for(int num : numbers) { // intをautoにすると自動推論する
   std::cout << num << std::endl;
 }
+```
+
+for (auto x : v)では、vから要素を毎回コピーする
+for (auto& x : v)では、vの参照のため要素を書き換える
+for (const auto& x : v)では、const参照のため、要素を読むだけ
+```cpp
+std::vector<int> v = {1, 2, 3};
+for (auto x : v) x *= 2;     // v は {1, 2, 3} のまま
+for (auto& x : v) x *= 2;    // v は {2, 4, 6}
 ```
