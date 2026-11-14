@@ -1,7 +1,7 @@
 ## const参照渡しと値渡しとポインタ渡しの比較
 - 使い分けの基準
 int, double, bool, ポインタなど小さい型の場合は値渡し
-std::, std::vector, クラスを読むだけの場合は、const参照渡し
+std::string, std::vector, クラスを読むだけの場合は、const参照渡し
 呼び出し元を書き換える場合は参照渡し
 
 - 値渡し
@@ -28,7 +28,7 @@ std::, std::vector, クラスを読むだけの場合は、const参照渡し
 
 - const参照渡し
 データもアドレスもコピーしない
-元の変数は変えず、元の変数を参照して読み取るら
+元の変数は変えず、元の変数を参照して読み取る
 大きなデータの読み取りに使う
 `const int& x`
 `func(a)`
@@ -40,14 +40,14 @@ std::, std::vector, クラスを読むだけの場合は、const参照渡し
 ## autoの使い方
 autoは変数の型をコンパイラが自動で推論してくれるキーワード
 ```cpp
-aut a = 10; // int
+auto a = 10; // int
 auto b = 3.14; // double
 auto c = std::string("hage"); // std::string
 ```
 
 文字列をautoで代入しても、std::stringにはならない
 ```cpp
-auto a = "hage" // const char*になる
+auto a = "hage"; // const char*になる
 ```
 
 型名が長いときに便利
@@ -60,21 +60,21 @@ std::vector<int> numbers = {10, 20, 30};
 ### autoと参照の関係
 ```cpp
 int a = 10;
-auto b = a; // bはaの値渡し
+auto b = a; // bはaのコピー
 b = 100;
 std::cout << a; // 10
 ```
 
 ```cpp
 int a = 10;
-auto& b = a; // 参照渡し
+auto& b = a; // aの参照
 b = 100;
 std::cout << a; // 100
 ```
 
 ```cpp
 int a = 10;
-const auto& b = a; // const参照渡し
+const auto& b = a; // aへのconst参照渡し
 // b = 100; // const参照のため変更できない
 ```
 
